@@ -1,22 +1,32 @@
-/* src/index.css */
+/* Spectre reset is already from CDN */
 
-/* Tailwind layers */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Global theme overrides */
-body {
-  @apply bg-navy font-sans text-textPrimary;
+:root {
+  --navy: #1f232b;
+  --navyDark: #1c2128;
+  --textPrimary: #e3eaf2;
+  --textSecondary: #7a8fa6;
 }
 
-/* Optional faint noise texture */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("/textures/noise.png") repeat;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 50;
+/* Tailwind isn’t used here; use vanilla CSS */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--navy);
+  color: var(--textPrimary);
+}
+
+header {
+  background-color: var(--navyDark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+.shadow-panel {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
