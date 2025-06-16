@@ -1,15 +1,19 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
-  plugins: [ react() ],
+  plugins: [react()],
+
   build: {
-    // Tell Rollup exactly which HTML to use as the entry:
-    rollupOptions: {
-      input: path.resolve(__dirname, 'public/index.html'),
-    },
     outDir: 'dist',
     emptyOutDir: true,
-  },
-});
+    rollupOptions: {
+      // Tell Rollup “here’s your HTML entry” and name it `index`
+      input: {
+        index: path.resolve(__dirname, 'public/index.html')
+      }
+    }
+  }
+})
