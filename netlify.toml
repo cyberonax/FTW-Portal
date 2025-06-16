@@ -1,17 +1,10 @@
-[build]
-  command   = "npm run build"
-  publish   = "dist"
+# netlify.toml
 
-# Optional: rewrite all routes to index.html for SPA routing
-[[redirects]]
-  from = "/*"[build]
-  command   = "npm run build"
-  publish   = "build"
+[build]
+  command = "npm run build"
+  publish = "build"
 
 [[redirects]]
   from = "/*"
-  to   = "/index.html"
-  status = 200
-
   to   = "/index.html"
   status = 200
