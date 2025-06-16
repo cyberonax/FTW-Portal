@@ -1,4 +1,5 @@
 // tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./index.html",
@@ -10,12 +11,12 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       colors: {
-        // match the extracted palette
-        pageBg: "#0e1a2b",
-        panelBg: "#14243d",
-        textPrimary: "#e3eaf2",
-        textSecondary: "#7a8fa6",
-        accent: "#4f8ef7",
+        navy: "#1f232b",           // page background
+        navyDark: "#1c2128",       // panel background
+        navyLight: "#20242d",      // lighter overlay
+        textPrimary: "#e3eaf2",    // main text
+        textSecondary: "#7a8fa6",  // muted text
+        primary: "#1f90ff",        // accent links/buttons
       },
       boxShadow: {
         panel: "0 2px 6px rgba(0, 0, 0, 0.5)",
