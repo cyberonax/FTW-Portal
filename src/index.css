@@ -1,14 +1,17 @@
 /* src/index.css */
+@import "spectre.css/dist/spectre.min.css";
+@import "spectre.css/dist/spectre-icons.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global overrides */
+/* Global theme overrides */
 body {
-  @apply bg-pageBg font-sans text-textPrimary;
+  @apply bg-navy font-sans text-textPrimary;
 }
 
-/* Optionally add a faint noise texture */
+/* Optional faint noise texture */
 body::before {
   content: "";
   position: fixed;
