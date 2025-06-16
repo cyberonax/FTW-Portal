@@ -1,23 +1,15 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
-  // Look for index.html inside the 'public' folder
-  root: 'public',
-
-  // When building, output into ../dist so Netlify can pick it up
+  plugins: [ react() ],
   build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-  },
-
-  plugins: [react()],
-
-  // Ensure all imports resolve from project root
-  resolve: {
-    alias: {
-      '@': '/src',
+    // Tell Rollup exactly which HTML to use as the entry:
+    rollupOptions: {
+      input: path.resolve(__dirname, 'public/index.html'),
     },
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });
